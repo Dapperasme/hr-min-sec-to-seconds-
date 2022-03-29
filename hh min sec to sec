@@ -1,0 +1,48 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+ 
+class Time
+{
+    private:
+        int tsecond;                
+        int hr, min, sec;             
+    public:
+        float collecttime();           
+        float calculatetime();         
+        float displayTime();
+    
+};
+ 
+float Time::collecttime()  // Here we collect time as input 
+{
+    cout << "Enter time:" << endl;
+    cout << "Hours :  ";          cin >> hr;
+    cout << "Minutes : ";          cin >> min;
+    cout << "Seconds  :";          cin >> sec;
+}
+ 
+float Time::calculatetime()  // Here we calculate time from input 
+{
+    tsecond = hr*3600 + min*60 + sec;
+}
+ 
+float Time::displayTime() // Here we display the new calculated time 
+{
+    cout << "The time entered bu the user is = " << hr << ":"
+                             << min << ":"
+                             << sec << endl;
+    cout << "Time in total seconds is: " << tsecond;
+}
+ 
+int main()
+{
+    Time T; 
+     
+    T.collecttime();             
+    T.calculatetime();
+    T.displayTime();
+     
+    return 0;
+}
+//Thank you 
